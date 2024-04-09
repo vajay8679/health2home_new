@@ -1,0 +1,454 @@
+{
+	"info": {
+		"_postman_id": "35f0e76f-7866-4c41-ab3e-22e8a8fa47b5",
+		"name": "hospital_management api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "13160979"
+	},
+	"item": [
+		{
+			"name": "http://127.0.0.1:8000/api/customer/hospital_allbed",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"host": true,
+					"accept": true,
+					"accept-encoding": true,
+					"connection": true,
+					"user-agent": true
+				},
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/customer/hospital_allbed",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"customer",
+						"hospital_allbed"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8000/api/customer/hospital_allbed_status",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "customer_name",
+							"value": "sunil",
+							"type": "text"
+						},
+						{
+							"key": "phone_number",
+							"value": "86888888822",
+							"type": "text"
+						},
+						{
+							"key": "phone_with_code",
+							"value": "9186888888822",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "sunil@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "123456",
+							"type": "text"
+						},
+						{
+							"key": "fcm_token",
+							"value": "sunil",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/customer/hospital_allbed_status",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"customer",
+						"hospital_allbed_status"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8000/api/customer/hospital_add_bed_status",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "bed_id",
+							"value": "2",
+							"type": "text"
+						},
+						{
+							"key": "hospital_id",
+							"value": "2",
+							"type": "text"
+						},
+						{
+							"key": "status",
+							"value": "Assigned",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/customer/hospital_add_bed_status",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"customer",
+						"hospital_add_bed_status"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8000/api/customer/hospital_add_bed",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "bed_count",
+							"value": "90",
+							"type": "text"
+						},
+						{
+							"key": "hospital_id",
+							"value": "2",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/customer/hospital_add_bed",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"customer",
+						"hospital_add_bed"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8000/api/customer/hospital_bed_detail?id=3",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "bed_id",
+							"value": "4",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/customer/hospital_bed_detail/4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"customer",
+						"hospital_bed_detail",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8000/api/customer/hospital_bed_detete?bed_id=1",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "bed_id",
+							"value": "1",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/customer/hospital_bed_detete/4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"customer",
+						"hospital_bed_detete",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8000/api/customer/hospital_bed_update",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "bed_id",
+							"value": "6",
+							"type": "text"
+						},
+						{
+							"key": "bed_count",
+							"value": "200",
+							"type": "text"
+						},
+						{
+							"key": "hospital_id",
+							"value": "2",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/customer/hospital_bed_update",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"customer",
+						"hospital_bed_update"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8000/api/customer/hospital_edit_bed/4",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/customer/hospital_edit_bed/6",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"customer",
+						"hospital_edit_bed",
+						"6"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8000/api/customer/hospital_bedstatus_detete/1",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/customer/hospital_bedstatus_detete/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"customer",
+						"hospital_bedstatus_detete",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8000/api/customer/hospital_bed_status_detail/2",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/customer/hospital_bed_status_detail/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"customer",
+						"hospital_bed_status_detail",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8000/api/customer/hospital_edit_status_bed/2",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/customer/hospital_edit_status_bed/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"customer",
+						"hospital_edit_status_bed",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8000/api/customer/hospital_bed_status_update/",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "bed_status_id",
+							"value": "3",
+							"type": "text"
+						},
+						{
+							"key": "bed_id",
+							"value": "7",
+							"type": "text"
+						},
+						{
+							"key": "hospital_id",
+							"value": "2",
+							"type": "text"
+						},
+						{
+							"key": "status",
+							"value": "Empty",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/customer/hospital_bed_status_update/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"customer",
+						"hospital_bed_status_update",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8000/api/customer/hospital_edit_status_bed/2",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/customer/hospital_edit_status_bed/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"customer",
+						"hospital_edit_status_bed",
+						"2"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
