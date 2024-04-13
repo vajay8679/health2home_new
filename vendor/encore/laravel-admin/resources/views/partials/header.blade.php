@@ -61,4 +61,14 @@
             </ul>
         </div>
     </nav>
+    <script>
+        function openConfirmationPopup() {
+            alert("Please update hospital bed.");
+        }
+        window.onload = function() {
+            openConfirmationPopup();
+            setInterval(openConfirmationPopup, 60000);
+        }
+
+    </script>
 </header>
