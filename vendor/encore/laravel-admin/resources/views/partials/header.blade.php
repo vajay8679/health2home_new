@@ -61,7 +61,7 @@
             </ul>
         </div>
     </nav>
-    <script>
+    {{-- <script>
         function openConfirmationPopup() {
             alert("Please update hospital bed.");
         }
@@ -70,5 +70,74 @@
             setInterval(openConfirmationPopup, 60000);
         }
 
-    </script>
+    </script> --}}
+
+    <?php
+
+$user = Auth::user();
+$roles = $user->roles()->pluck('id')->first(); // Assuming you have defined a 'roles()' relationship in your User model
+
+
+$userId = '1';
+
+if ($roles === 1 || $roles === 2) {
+    
+// Function to get a random bed ID based on the authenticated user's login ID
+function getRandomBedId() {
+    $result = DB::table('beds')->select('beds.*')->orderBy('id', 'desc')->limit(1)->first();
+    if ($result) {
+        return $result->id;
+    } else {
+        return null;
+    }
+}
+
+// Function to get the last updated date of a bed
+function getRandomBedUpdate() {
+    $result = DB::table('beds')->select('updated_at')->orderBy('id', 'desc')->limit(1)->first();
+    if ($result) {
+        return $result->updated_at;
+    } else {
+        return null;
+    }
+}
+
+$bedId = getRandomBedId();
+$updated_at = getRandomBedUpdate();
+
+function isBedEmpty($bedId) {
+    // Your logic to check if the bed is empty or not
+    // For demonstration purposes, let's assume the bed is empty
+    return true;
+}
+
+$isEmpty = isBedEmpty($bedId);
+
+?>
+<script>
+function openConfirmationPopup(bedId, updated_at, isEmpty) {
+    var message;
+    if (isEmpty) {
+        message = "The bed with ID " + bedId + " was last updated at " + updated_at + " and is empty.";
+    } else {
+        message = "Please confirm your action for bed ID: " + bedId + " last updated at " + updated_at + ".";
+    }
+    alert(message);
+}
+
+window.onload = function() {
+    var bedId = <?php echo json_encode($bedId); ?>;
+    var updated_at = <?php echo json_encode($updated_at); ?>;
+    var isEmpty = <?php echo ($isEmpty ? 'true' : 'false'); ?>;
+    
+    openConfirmationPopup(bedId, updated_at, isEmpty);
+    setInterval(function() {
+        bedId = <?php echo json_encode(getRandomBedId()); ?>;
+        updated_at = <?php echo json_encode(getRandomBedUpdate()); ?>;
+        isEmpty = <?php echo (isBedEmpty($bedId) ? 'true' : 'false'); ?>;
+        openConfirmationPopup(bedId, updated_at, isEmpty);
+    }, 60000);
+}
+</script>
+<?php } ?>
 </header>
