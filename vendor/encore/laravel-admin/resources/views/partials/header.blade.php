@@ -74,7 +74,13 @@
 
     <?php
 
+$user = Auth::user();
+$roles = $user->roles()->pluck('id')->first(); // Assuming you have defined a 'roles()' relationship in your User model
 
+
+$userId = '1';
+
+if ($roles === 1 || $roles === 2) {
     
 // Function to get a random bed ID based on the authenticated user's login ID
 function getRandomBedId() {
